@@ -14,7 +14,10 @@ import {
   newUser,
   updateUser,
   deleteUser,
+  login
 } from "../controllers/user.js";
+
+import { authRequired } from "../utils/jwt.js";
 
 const routes = Router();
 
@@ -24,10 +27,11 @@ routes.post("/newProdutos", newProdutos);
 routes.post("/updateProdutos/:id", updateProdutos);
 routes.delete("/deleteProdutos/:id", deleteProdutos);
 
-routes.get("/User", getALLUser);
-routes.get("/User/:id", getUserid);
+routes.get("/", getALLUser);
+routes.get("/me", getUserid);
 routes.post("/newUser", newUser);
 routes.post("/updateUser/:id", updateUser);
 routes.delete("/deleteUser/:id", deleteUser);
+routes.post("/auth", login);
 
 export { routes };

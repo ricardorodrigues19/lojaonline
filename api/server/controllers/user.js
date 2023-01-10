@@ -1,7 +1,7 @@
 import { UserModule } from "../models/user.js";
 
 export const getALLUser = async (req, res) => {
-  const User = await UserModule.findAll({ where: {} });
+  const User = await UserModule.findAll();
   return res.send({ User });
 };
 
@@ -10,8 +10,8 @@ export const getUserid = async (req, res) => {
   const User = await UserModule.findByPk(id);
   if (User === null) {
     res.send("Não existe user com id: " + id);
-  }
-  res.send({ Produtos });
+  };
+  res.send({ User });
 };
 
 export const newUser = async (req, res) => {
@@ -50,4 +50,31 @@ export const deleteUser = async (req, res) => {
   } else {
     return res.send("Não existe user com id: " + id);
   }
+};
+
+export const login = async (req, res) => {
+  const { username, password } = req.body;
+
+  const user = await UserModel.findOne({
+    where: {
+      username: username,
+      password: password,
+    },
+  });
+
+  if (!user) {
+    return res.status(500).json({
+      message: "CREDENCIAIS ERRADAS",
+    });
+  }
+
+  const token = createToken({
+    id: user.id,
+    username: user.username,
+    batatas: 2,
+  });
+  return res.send({
+    message: "LOGIN FEITO",
+    token,
+  });
 };
