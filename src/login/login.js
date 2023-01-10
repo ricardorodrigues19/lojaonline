@@ -49,7 +49,7 @@ function Login() {
   };
 
   return (
-    <>
+    <div className="bg">
       {authToken ? (
         <Dashboard logout={logout} />
       ) : (
@@ -58,7 +58,7 @@ function Login() {
             id="username"
             name="username"
             type="text"
-            placeholder="username"
+            placeholder="User"
             value={username}
             onChange={onChangeInput}
           />
@@ -66,14 +66,14 @@ function Login() {
             id="password"
             name="password"
             type="password"
-            placeholder="password"
+            placeholder="Password"
             value={password}
             onChange={onChangeInput}
           />
           <input type="submit" value="Login" />
         </form>
       )}
-    </>
+    </div>
   );
 }
 

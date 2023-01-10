@@ -3,26 +3,12 @@ body {
   text-align: center;
 }
 
+h1, h2, h3 {
+color: #003785;
+}
+
 .bg {
   background-color: white;
   background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2381c9fa' fill-opacity='0.4'%3E%3Cpath d='M10 10h10v10H10zM40 10h10v10H40zM70 10h10v10H70zM10 40h10v10H10zM40 40h10v10H40zM70 40h10v10H70zM10 70h10v10H10zM40 70h10v10H40zM70 70h10v10H70z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   background-size: 100px 100px;
-}
-
-h1, h2, h3 {
-  color: #003785;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #81c9fa;
-  padding: 20px;
-}
-
-.header h1 {
-  font-size: 24px;
-  margin: 0;
-  color: black;
 }
